@@ -1,0 +1,22 @@
+input-1.txt
+
+lizard 4
+paper 4
+rock 4
+scissors 4
+spock 4
+crushes 2
+covers 1
+cuts 1
+decapitates 1
+disproves 1
+eats 1
+poisons 1
+smashes 1
+vaporizes 1
+
+input-2.txt
+
+knock 18
+penny 3
+sheldon 3
