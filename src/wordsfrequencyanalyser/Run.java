@@ -36,7 +36,7 @@ public class Run {
                 int end = boundary.next();
                 while (end != BreakIterator.DONE) {
                     String word = line.substring(start, end);
-                    // все слова к нижнему регистру, чтобы не было дублирования
+                    // все слова к нижнему регистру, чтобы не было дублирования!
                     word = word.toLowerCase();
                     if (Character.isLetterOrDigit(word.charAt(0))) {
                         // если еще не встречали такое слово, добавим в wordsMap
