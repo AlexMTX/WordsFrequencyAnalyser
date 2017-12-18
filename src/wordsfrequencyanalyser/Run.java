@@ -29,7 +29,7 @@ public class Run {
             inp = new BufferedReader(new FileReader(fileName));
             String line;
 
-            //Работа с файлом построчно. Отделение слов с помощью BreakIterator.
+            // Работа с файлом построчно. Отделение слов с помощью BreakIterator.
             while ((line = inp.readLine()) != null) {
                 BreakIterator boundary = BreakIterator.getWordInstance();
                 boundary.setText(line);
@@ -37,14 +37,14 @@ public class Run {
                 int end = boundary.next();
                 while (end != BreakIterator.DONE) {
                     String word = line.substring(start, end);
-                    //все слова к нижнему регистру, чтобы не было дублирования
+                    // все слова к нижнему регистру, чтобы не было дублирования
                     word = word.toLowerCase();
                     if (Character.isLetterOrDigit(word.charAt(0))) {
-                        //если еще не встречали такое слово, добавим в wordsMap
+                        // если еще не встречали такое слово, добавим в wordsMap
                         if (!wordsMap.containsKey(word)) {
                             wordsMap.put(word, 0);
                         }
-                        //увеличим количество встреч этого слова
+                        // увеличим количество встреч этого слова
                         wordsMap.put(word, wordsMap.get(word) + 1);
                     }
                     start = end;
@@ -58,7 +58,7 @@ public class Run {
             }
         }
 
-        //Множество с количеством встреч разных слов, упорядоченное в обратном порядке
+        // Множество с количеством встреч разных слов, упорядоченное в обратном порядке
         Set<Integer> frequenciesDescentSet = new TreeSet<Integer>(
                 new Comparator<Integer>() {
                     public int compare(Integer int1, Integer int2) {
@@ -71,7 +71,7 @@ public class Run {
             frequenciesDescentSet.add(frequenciesValuesIterator.next());
         }
         
-        //проходя по количеству встреч слов и ключам/словам выписываем подходящие на экран
+        // проходя по количеству встреч слов и ключам/словам выписываем подходящие на экран
         Iterator<Integer> frequencySetIterator = frequenciesDescentSet.iterator();
         while (frequencySetIterator.hasNext()) {
             int i = frequencySetIterator.next();
