@@ -25,7 +25,6 @@ public class Run {
         BufferedReader inp = null;
 
         try {
-
             inp = new BufferedReader(new FileReader(fileName));
             String line;
 
